@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Health &amp; Wellness Maps | Find Local Wellness Resources on Cape Cod, Coming Soon</title>
+<meta name="description" content="Health & Wellness Maps is a free, easy-to-search map of local health and wellness resources on Cape Cod and beyond: recovery support, fitness, mental health, nutrition, and more. Coming soon.">
+<meta name="theme-color" content="#0f766e">
+<meta property="og:title" content="Health & Wellness Maps">
+<meta property="og:description" content="A map of local health and wellness resources on Cape Cod. Coming soon.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://healthandwellnessmaps.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Cpath d='M32 54s16-14 16-27a16 16 0 0 0-32 0c0 13 16 27 16 27z' fill='%23ecfdf5'/%3E%3Cpath d='M32 20v14M25 27h14' stroke='%230f766e' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--teal:#0f766e;--teal-d:#0b4f4a;--mint:#ecfdf5;--mint-2:#d1fae5;--sky:#e0f2fe;--ink:#0f2a2a;--muted:#4b6362;--coral:#fb7185;--sun:#fbbf24;--line:#d6e7e3}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:#f7fbfa;line-height:1.65;font-size:16.5px}
+  h1,h2,h3{line-height:1.12;letter-spacing:-.02em}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  header{padding:22px 0}
+  header .wrap{display:flex;align-items:center;justify-content:space-between}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.1rem;color:var(--ink);text-decoration:none}
+  .logo svg{width:36px;height:36px}
+  .logo span{color:var(--teal)}
+  .badge{background:var(--mint-2);color:var(--teal-d);font-weight:700;font-size:.8rem;padding:7px 14px;border-radius:999px}
+  .hero{padding:40px 0 90px}
+  .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .hero h1{font-size:clamp(2.5rem,5.6vw,4.2rem);font-weight:800;margin:18px 0 20px}
+  .hero h1 .hl{background:linear-gradient(transparent 62%,var(--mint-2) 62%);color:var(--teal)}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.85rem;color:var(--teal);background:#fff;border:1px solid var(--line);padding:7px 14px;border-radius:999px}
+  .eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px var(--mint-2)}
+  .lead{color:var(--muted);font-size:1.13rem;max-width:520px;margin-bottom:30px}
+  .search{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:8px 8px 8px 18px;box-shadow:0 12px 30px rgba(15,118,110,.08);max-width:520px}
+  .search svg{width:20px;height:20px;stroke:var(--muted);fill:none;stroke-width:2;flex:0 0 auto}
+  .search input{flex:1;min-width:0;border:0;outline:none;font:inherit;color:var(--ink);background:transparent;padding:10px 0}
+  .search button{background:var(--teal);color:#fff;border:0;border-radius:11px;padding:12px 20px;font:700 .98rem "Plus Jakarta Sans",sans-serif;cursor:pointer;white-space:nowrap}
+  .search button:hover{background:var(--teal-d)}
+  .note{font-size:.86rem;color:var(--muted);margin-top:12px;min-height:1.4em}
+  .note.ok{color:var(--teal);font-weight:600}
+  /* map illustration */
+  .mapcard{position:relative;background:linear-gradient(160deg,var(--sky),var(--mint));border-radius:28px;aspect-ratio:1/0.92;border:1px solid var(--line);overflow:hidden;box-shadow:0 30px 60px rgba(15,42,42,.12)}
+  .mapcard svg.bg{position:absolute;inset:0;width:100%;height:100%}
+  .pin{position:absolute;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center}
+  .pin b{display:grid;place-items:center;width:40px;height:40px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 8px 16px rgba(0,0,0,.18)}
+  .pin b svg{transform:rotate(45deg);width:20px;height:20px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .label{position:absolute;background:#fff;border-radius:12px;padding:8px 12px;font-size:.8rem;font-weight:700;box-shadow:0 8px 20px rgba(15,42,42,.12);display:flex;gap:8px;align-items:center;white-space:nowrap}
+  .label i{width:8px;height:8px;border-radius:50%}
+  .section{padding:84px 0}
+  .alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .center{text-align:center;max-width:640px;margin:0 auto 48px}
+  .center small{color:var(--teal);font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem}
+  .center h2{font-size:clamp(1.9rem,3.8vw,2.7rem);font-weight:800;margin:10px 0 12px}
+  .center p{color:var(--muted)}
+  .cats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .cat{border:1px solid var(--line);border-radius:18px;padding:24px;background:#f7fbfa;transition:transform .2s,box-shadow .2s}
+  .cat:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(15,118,110,.1)}
+  .cat .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;margin-bottom:14px}
+  .cat .ic svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .cat h3{font-size:1.08rem;margin-bottom:4px}
+  .cat p{color:var(--muted);font-size:.93rem}
+  .feat{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .feat div{padding:6px}
+  .feat h3{font-size:1.2rem;margin:12px 0 6px}
+  .feat p{color:var(--muted)}
+  .feat .n{width:40px;height:40px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:800}
+  .cta{background:linear-gradient(135deg,var(--teal-d),var(--teal));color:#fff;border-radius:28px;padding:56px 32px;text-align:center}
+  .cta h2{font-size:clamp(1.8rem,3.6vw,2.5rem);font-weight:800;margin-bottom:10px}
+  .cta p{opacity:.9;max-width:560px;margin:0 auto}
+  footer{padding:36px 0;color:var(--muted);font-size:.88rem}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  @media (max-width:960px){.hero-grid{grid-template-columns:1fr}.cats{grid-template-columns:repeat(2,1fr)}.feat{grid-template-columns:1fr}}
+  @media (max-width:540px){.cats{grid-template-columns:1fr}.search{flex-wrap:wrap;padding:10px}.search button{width:100%}.badge{display:none}.section{padding:60px 0}.label{font-size:.7rem}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="Health and Wellness Maps home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0f766e"/><path d="M32 54s16-14 16-27a16 16 0 0 0-32 0c0 13 16 27 16 27z" fill="#ecfdf5"/><path d="M32 20v14M25 27h14" stroke="#0f766e" stroke-width="5" stroke-linecap="round"/></svg>
+      Health&nbsp;&amp;&nbsp;Wellness&nbsp;<span>Maps</span>
+    </a>
+    <span class="badge">Launching soon</span>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow"><i></i>Starting on Cape Cod</span>
+        <h1>Find the care that's <span class="hl">close to home.</span></h1>
+        <p class="lead">Health &amp; Wellness Maps will bring local health and wellness resources together on one simple, searchable map, from recovery support and mental health services to fitness, nutrition, and community programs.</p>
+        <form class="search" id="notify" novalidate>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          <label for="em" style="position:absolute;left:-9999px">Email address</label>
+          <input id="em" type="email" placeholder="Get notified at launch: your email" autocomplete="email" required>
+          <button type="submit">Notify me</button>
+        </form>
+        <p class="note" id="note">We're mapping resources now. Be the first to explore.</p>
+      </div>
+
+      <div class="mapcard" aria-hidden="true">
+        <svg class="bg" viewBox="0 0 500 460" preserveAspectRatio="xMidYMid slice">
+          <defs><pattern id="g" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#bfe3dc" stroke-width="1"/></pattern></defs>
+          <rect width="500" height="460" fill="url(#g)"/>
+          <path d="M40 330 C 120 300 170 340 240 300 C 300 265 330 290 380 250 C 420 220 430 150 405 100 C 395 80 420 60 445 80 C 470 110 470 190 440 250 C 400 330 300 360 220 380 C 150 398 80 390 40 360Z" fill="#a7f3d0" stroke="#6ee7b7" stroke-width="3"/>
+          <path d="M70 345 C 150 320 230 330 300 300 S 410 230 430 140" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 14"/>
+        </svg>
+        <div class="pin" style="left:22%;top:72%"><b style="background:#0f766e"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></b></div>
+        <div class="pin" style="left:52%;top:64%"><b style="background:#fb7185"><svg viewBox="0 0 24 24"><path d="M6 12h12M4 9v6M20 9v6M8 7v10M16 7v10"/></svg></b></div>
+        <div class="pin" style="left:76%;top:50%"><b style="background:#f59e0b"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 6 6 6 10a6 6 0 0 1-12 0c0-4 3-6 6-10z"/></svg></b></div>
+        <div class="pin" style="left:87%;top:24%"><b style="background:#6366f1"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M6 20a6 6 0 0 1 12 0"/></svg></b></div>
+        <div class="label" style="left:6%;top:12%"><i style="background:#0f766e"></i>Recovery support</div>
+        <div class="label" style="left:30%;top:24%"><i style="background:#fb7185"></i>Fitness &amp; movement</div>
+        <div class="label" style="right:6%;bottom:8%"><i style="background:#f59e0b"></i>Nutrition</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="center">
+        <small>What you'll find</small>
+        <h2>Wellness, all in one place</h2>
+        <p>We're organizing local resources into clear categories so you can find what you need quickly.</p>
+      </div>
+      <div class="cats">
+        <div class="cat"><div class="ic" style="background:#0f766e"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></div><h3>Recovery support</h3><p>Meetings, recovery cafés, and peer support.</p></div>
+        <div class="cat"><div class="ic" style="background:#6366f1"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg></div><h3>Mental health</h3><p>Counseling, therapy, and support groups.</p></div>
+        <div class="cat"><div class="ic" style="background:#fb7185"><svg viewBox="0 0 24 24"><path d="M6 12h12M4 9v6M20 9v6M8 7v10M16 7v10"/></svg></div><h3>Fitness &amp; movement</h3><p>Gyms, yoga, trails, and outdoor activity.</p></div>
+        <div class="cat"><div class="ic" style="background:#f59e0b"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 6 6 6 10a6 6 0 0 1-12 0c0-4 3-6 6-10z"/></svg></div><h3>Nutrition</h3><p>Healthy food, nutrition help, and food access.</p></div>
+        <div class="cat"><div class="ic" style="background:#0ea5e9"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div><h3>Medical care</h3><p>Clinics, urgent care, and primary care.</p></div>
+        <div class="cat"><div class="ic" style="background:#14b8a6"><svg viewBox="0 0 24 24"><path d="M4 15c4-1 6-5 8-11 2 6 4 10 8 11-4 1-6 3-8 5-2-2-4-4-8-5z"/></svg></div><h3>Holistic wellness</h3><p>Massage, acupuncture, and mindfulness.</p></div>
+        <div class="cat"><div class="ic" style="background:#8b5cf6"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20a6 6 0 0 1 12 0M14 20a4 4 0 0 1 7 0"/></svg></div><h3>Community programs</h3><p>Classes, workshops, and local groups.</p></div>
+        <div class="cat"><div class="ic" style="background:#ef4444"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div><h3>Crisis &amp; support</h3><p>Help lines and services for when you need it now.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="center">
+        <small>How it will work</small>
+        <h2>Simple by design</h2>
+      </div>
+      <div class="feat">
+        <div><span class="n">1</span><h3>Search near you</h3><p>Enter your town or use your location to see resources nearby.</p></div>
+        <div><span class="n">2</span><h3>Filter by need</h3><p>Narrow results by category so you only see what's relevant to you.</p></div>
+        <div><span class="n">3</span><h3>Connect directly</h3><p>Get directions and contact details so you can reach out with confidence.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="cta">
+        <h2>Know a local resource?</h2>
+        <p>We're building this map for the community. Soon you'll be able to suggest health and wellness resources so others can find them too.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="y">2026</span> Health &amp; Wellness Maps · healthandwellnessmaps.com</span>
+    <span>If you are in crisis, call or text 988 (U.S. Suicide &amp; Crisis Lifeline) or dial 911.</span>
+  </div>
+</footer>
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+  // NOTE: no backend connected yet. Hook this form to a form service before launch to actually collect emails.
+  document.getElementById('notify').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var i = document.getElementById('em'), n = document.getElementById('note');
+    if (!i.value || !i.checkValidity()) { n.textContent = 'Please enter a valid email address.'; n.className = 'note'; i.focus(); return; }
+    n.textContent = 'Thanks! Launch notifications are opening soon. Please check back shortly.';
+    n.className = 'note ok';
+  });
+</script>
+</body>
+</html>
