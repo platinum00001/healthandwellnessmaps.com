@@ -190,5 +190,5 @@
   }
 
   sb.auth.onAuthStateChange(function (ev) { if (ev === 'PASSWORD_RECOVERY') { var p = prompt('Choose a new password (8+ characters)'); if (p) sb.auth.updateUser({ password: p }).then(function (r) { alert(r.error ? r.error.message : 'Password updated.'); }); } });
-  refreshUser().then(load).then(function () { go(location.hash === '#suggest' ? 'submit' : 'list'); });
+  refreshUser().then(load).then(function () { var pts = visible().map(function (p) { return [p.lat, p.lng]; }); if (pts.length > 1) map.fitBounds(pts, { padding: [40, 40], maxZoom: 13 }); go(location.hash === '#suggest' ? 'submit' : 'list'); });
 })();
