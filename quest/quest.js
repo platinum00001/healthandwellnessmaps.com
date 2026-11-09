@@ -16,22 +16,28 @@
   function trailStops() {
     return data.places.filter(function (p) { return p.trail; }).sort(function (a, b) { return (a.trailN || 0) - (b.trailN || 0); });
   }
+  function asset(path) {
+    path = String(path || '');
+    if (path.indexOf('/quest/') === 0) return path;
+    if (path.indexOf('assets/') === 0) return '/quest/' + path;
+    return '/quest/assets/' + path.replace(/^.*\//, '');
+  }
 
   function setFace(f) {
     face = f;
     var meta = data.faces[f];
     var pic = document.getElementById('map-pic');
     var img = document.getElementById('map-img');
-    pic.querySelector('source').srcset = '/' + meta.webp.replace(/^assets\//, 'quest/assets/').replace(/^quest\//, 'quest/');
-    // paths in json are assets/... relative to /quest/
-    var webp = '/quest/' + meta.webp.replace(/^assets\//, 'assets/');
-    var jpg = '/quest/' + meta.src.replace(/^assets\//, 'assets/');
-    pic.querySelector('source').srcset = webp;
+    var webp = asset(meta.webp);
+    var jpg = asset(meta.src);
+    var src = pic.querySelector('source');
+    if (src) src.srcset = webp;
     img.src = jpg;
-    img.alt = 'Illustrated Culinary Quest map — ' + meta.title;
+    img.alt = 'Falmouth Culinary Quest map — ' + meta.title;
     document.getElementById('side-label').textContent = (f === 'downtown' ? 'Front · ' : 'Back · ') + meta.title;
     document.getElementById('btn-flip').textContent = f === 'downtown' ? 'Flip to Woods Hole side' : 'Flip to Downtown side';
     popupId = null;
+    document.getElementById('popup-host').innerHTML = '';
     drawPins();
     renderSide();
   }
@@ -52,9 +58,7 @@
 
   function drawPins() {
     var host = document.getElementById('pins');
-    var pop = document.getElementById('popup-host');
     host.innerHTML = '';
-    pop.innerHTML = '';
     visiblePlaces().forEach(function (p) {
       var c = cat(p.cat);
       var btn = document.createElement('button');
@@ -63,21 +67,26 @@
       btn.style.left = (p.x * 100) + '%';
       btn.style.top = (p.y * 100) + '%';
       btn.dataset.id = p.id;
-      btn.setAttribute('aria-label', p.name);
-      btn.innerHTML = '<span class="label">' + h(p.name) + '</span><span class="dot" style="background:' + h(c.color) + '"><span>' + (p.quest ? '★' : (p.n || '')) + '</span></span>';
-      btn.onclick = function (e) { e.stopPropagation(); openPopup(p.id); };
+      btn.setAttribute('aria-label', p.name + (p.quest ? ', Quest Stop 1' : ''));
+      btn.innerHTML = '<span class="label">' + h(p.name) + '</span>' +
+        '<span class="dot" style="background:' + h(c.color) + '"><span>' + (p.quest ? '★' : String(p.n || '')) + '</span></span>';
+      btn.addEventListener('click', function (e) { e.stopPropagation(); openPopup(p.id); });
       host.appendChild(btn);
     });
-    // event markers (small diamonds)
     data.events.filter(function (e) { return e.side === face; }).forEach(function (e) {
       var b = document.createElement('button');
-      b.type = 'button'; b.className = 'pin'; b.style.left = (e.x * 100) + '%'; b.style.top = (e.y * 100) + '%';
+      b.type = 'button';
+      b.className = 'pin event';
+      b.style.left = (e.x * 100) + '%';
+      b.style.top = (e.y * 100) + '%';
       b.setAttribute('aria-label', e.name);
-      b.innerHTML = '<span class="label">' + h(e.name) + '</span><span class="dot" style="background:#7c2d12;border-radius:4px;transform:rotate(0)"><span style="transform:none">E</span></span>';
-      b.onclick = function (ev) {
+      b.innerHTML = '<span class="label">' + h(e.name) + '</span><span class="dot" style="background:#7c2d12"><span>E</span></span>';
+      b.addEventListener('click', function (ev) {
         ev.stopPropagation();
-        pop.innerHTML = '<div class="popup" style="left:' + (e.x * 100) + '%;top:' + (e.y * 100) + '%"><b>' + h(e.name) + '</b><div class="meta"><strong>' + h(e.when) + '</strong><br>' + h(e.where) + '</div></div>';
-      };
+        document.getElementById('popup-host').innerHTML =
+          '<div class="popup" style="left:' + (e.x * 100) + '%;top:' + (e.y * 100) + '%"><b>' + h(e.name) +
+          '</b><div class="meta"><strong>' + h(e.when) + '</strong><br>' + h(e.where) + '</div></div>';
+      });
       host.appendChild(b);
     });
   }
@@ -97,7 +106,6 @@
     else if (p.websiteNote) html += '<br>' + h(p.websiteNote);
     html += '</div></div>';
     document.getElementById('popup-host').innerHTML = html;
-    // scroll pin into view roughly
     var viewer = document.getElementById('viewer');
     var sheet = document.getElementById('sheet');
     viewer.scrollTo({
@@ -117,11 +125,10 @@
     document.getElementById('panel').innerHTML =
       '<h1>Culinary Quest — Falmouth Food Map</h1>' +
       '<p class="tagline">Eat. Explore. Earn stamps.</p>' +
-      '<div class="note"><strong>Preview.</strong> Illustrated pull-out style map reused from the magazine wellness insert. Restaurant pins are being verified. No hours, phones, or ratings.</div>' +
-
+      '<div class="note"><strong>Preview.</strong> Food-themed illustrated map. Listings are being verified — no hours, phones, or ratings.</div>' +
       '<div class="box passport" id="passport">' +
       '<h2>Quest passport · Main Street Lunch Trail</h2>' +
-      '<p style="font-size:.8rem;color:#78716c;margin:0 0 6px">5 stops · mock / QR check-in demo. Stamps stay on this device.</p>' +
+      '<p style="font-size:.8rem;color:#78716c;margin:0 0 6px">5 stops · mock / QR check-in. Stamps stay on this device.</p>' +
       '<div class="stamps">' + trail.map(function (p) {
         var on = !!st[p.id];
         return '<div class="stamp ' + (on ? 'got' : '') + '"><span class="n">' + (on ? '✓' : p.trailN) + '</span>' + h((p.name || '').split(' ')[0]) + '</div>';
@@ -132,32 +139,28 @@
       '<button type="button" class="btn ghost sm" id="reset-stamps">Reset</button>' +
       '<button type="button" class="btn ghost sm" id="goto-quest1">Quest Stop #1</button>' +
       '</div></div>' +
-
       '<div class="box partner">' +
       '<h2>Restaurant Exchange Program</h2>' +
       '<p style="font-size:.82rem;color:#5c564e;margin:0 0 8px">Coming soon — partner with us to swap staff meals and appear on Culinary Quest trails.</p>' +
       '<a class="btn sm teal" href="mailto:healthandwellnessmapllc@gmail.com?subject=Restaurant%20Exchange%20Program">Partner with us</a>' +
       '</div>' +
-
       '<div class="box events">' +
       '<h2>Food Festival &amp; Event Dates</h2>' +
       '<ul class="elist">' + data.events.map(function (e) {
         return '<li><b>' + h(e.name) + '</b><span>' + h(e.when) + ' · ' + h(e.where) + '</span></li>';
       }).join('') + '</ul></div>' +
-
       '<div class="box">' +
       '<h2>Map key · restaurant categories</h2>' +
       '<div class="key">' + data.categories.map(function (c) {
         var n = placesAll.filter(function (p) { return p.cat === c.id; }).length;
         return '<div><i style="background:' + h(c.color) + '"></i>' + h(c.name) + ' <span style="color:#78716c">(' + n + ')</span></div>';
       }).join('') +
-      '<div><i style="background:#7c2d12;border-radius:2px"></i>Festival / event marker</div>' +
-      '<div><i style="background:#16a34a"></i>Quest Stop #1 (star)</div>' +
+      '<div><i style="background:#7c2d12;border-radius:2px"></i>Festival / event</div>' +
+      '<div><i style="background:#16a34a"></i>Quest Stop #1 ★</div>' +
       '</div></div>' +
-
       '<div class="box">' +
       '<h2>Border ad tiles</h2>' +
-      '<p style="font-size:.8rem;color:#5c564e;margin:0 0 8px">Magazine border ads stay on the art. Open partner slots below.</p>' +
+      '<p style="font-size:.8rem;color:#5c564e;margin:0 0 8px">Verified restaurants on the border; open slots say Become a partner. No invented phone numbers.</p>' +
       '<div class="ads">' +
       '<div class="ad feat"><strong>Cape Island Café</strong>Quest Stop #1 · featured</div>' +
       '<div class="ad"><strong>Your ad here</strong>Become a partner</div>' +
@@ -166,7 +169,6 @@
       '</div>' +
       '<p style="margin-top:8px"><a class="btn ghost sm" href="mailto:healthandwellnessmapllc@gmail.com?subject=Culinary%20Quest%20ad%20tile">Reserve a tile</a></p>' +
       '</div>' +
-
       '<div class="box">' +
       '<h2>Restaurants (' + placesAll.length + ')</h2>' +
       '<div class="chips"><button type="button" class="chip ' + (!catFilter ? 'on' : '') + '" data-c="">All</button>' +
@@ -181,8 +183,7 @@
           (p.side !== face ? ' · on ' + (p.side === 'downtown' ? 'Downtown' : 'Woods Hole') + ' side' : '') +
           '</div></div>';
       }).join('') + '</div></div>' +
-
-      '<p style="font-size:.75rem;color:#78716c;margin-top:8px">' + h(data.credits) + '</p>';
+      '<p style="font-size:.75rem;color:#78716c;margin-top:8px">' + h(data.credits || '') + '</p>';
 
     document.querySelectorAll('.chip').forEach(function (b) {
       b.onclick = function () { catFilter = b.dataset.c; drawPins(); renderSide(); };
@@ -205,7 +206,7 @@
       if (!next) { alert('Trail complete on this device. Reset to try again.'); return; }
       if (!confirm('Mock / QR check-in at:\n\n' + next.name + '\n\nDemo only. Add stamp #' + next.trailN + '?')) return;
       st[next.id] = Date.now(); saveStamps(st);
-      if (next.side !== face) setFace(next.side); else { renderSide(); }
+      if (next.side !== face) setFace(next.side); else renderSide();
       openPopup(next.id);
     };
     document.getElementById('reset-stamps').onclick = function () {
@@ -220,36 +221,45 @@
     document.getElementById('sheet-toggle').setAttribute('aria-expanded', open ? 'true' : 'false');
   }
 
-  function downloadPng() {
-    var img = document.getElementById('map-img');
-    var a = document.createElement('a');
-    a.href = img.currentSrc || img.src;
-    a.download = 'culinary-quest-' + face + '.jpg';
-    a.click();
-  }
-
-  fetch('/quest/assets/culinary-quest.json').then(function (r) { return r.json(); }).then(function (d) {
+  function boot(d) {
     data = d;
+    data.credits = 'Food-themed illustrated base generated for Culinary Quest; restaurant pins and border tiles are Health & Wellness Maps overlays. Facts verified; no invented phones.';
     setFace('downtown');
     applyZoom();
     document.getElementById('btn-zoom-in').onclick = function () { zoom = Math.min(3, zoom + 0.25); applyZoom(); };
     document.getElementById('btn-zoom-out').onclick = function () { zoom = Math.max(0.75, zoom - 0.25); applyZoom(); };
     document.getElementById('btn-flip').onclick = function () { setFace(face === 'downtown' ? 'woodshole' : 'downtown'); };
-    document.getElementById('btn-png').onclick = downloadPng;
+    document.getElementById('btn-png').onclick = function () {
+      var img = document.getElementById('map-img');
+      var a = document.createElement('a');
+      a.href = img.currentSrc || img.src;
+      a.download = 'culinary-quest-' + face + '.jpg';
+      a.click();
+    };
     document.getElementById('btn-full').onclick = function () {
       var el = document.querySelector('.stage');
       if (!document.fullscreenElement) el.requestFullscreen().catch(function () {});
       else document.exitFullscreen();
     };
-    document.getElementById('sheet').onclick = function () {
-      popupId = null; document.getElementById('popup-host').innerHTML = '';
+    document.getElementById('sheet').addEventListener('click', function () {
+      popupId = null;
+      document.getElementById('popup-host').innerHTML = '';
       document.querySelectorAll('.pin').forEach(function (el) { el.classList.remove('is-on'); });
-    };
+    });
     var tog = document.getElementById('sheet-toggle');
     tog.onclick = function () { setSheet(!document.getElementById('side').classList.contains('open')); };
-    tog.onkeydown = function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tog.click(); } };
-  }).catch(function (e) {
-    document.getElementById('panel').innerHTML = '<p>Could not load map data.</p>';
-    console.error(e);
-  });
+  }
+
+  // Prefer inline JSON if present (faster first paint), else fetch
+  var inline = document.getElementById('cq-data');
+  if (inline && inline.textContent.trim()) {
+    try { boot(JSON.parse(inline.textContent)); return; } catch (e) { console.error(e); }
+  }
+  fetch('/quest/assets/culinary-quest.json')
+    .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(boot)
+    .catch(function (e) {
+      document.getElementById('panel').innerHTML = '<p class="note"><strong>Could not load map data.</strong> ' + h(String(e)) + '</p>';
+      console.error(e);
+    });
 })();

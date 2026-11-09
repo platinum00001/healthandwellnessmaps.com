@@ -9,7 +9,7 @@
   ],
   "faces": {
     "downtown": {
-      "title": "Downtown \u00b7 Main Street (front)",
+      "title": "Downtown \u00b7 Main Street Food Map (front)",
       "src": "assets/downtown-2400.jpg",
       "webp": "assets/downtown-2400.webp",
       "small": "assets/downtown-1200.webp",
@@ -17,7 +17,7 @@
       "height": 1553
     },
     "woodshole": {
-      "title": "Main Street & Woods Hole (back)",
+      "title": "Woods Hole & Waterfront Food Map (back)",
       "src": "assets/woodshole-2400.jpg",
       "webp": "assets/woodshole-2400.webp",
       "small": "assets/woodshole-1200.webp",
@@ -508,5 +508,5 @@
     }
   ],
   "pdf": "assets/magazine-pullout-reference.pdf",
-  "credits": "Base illustrated map art reused from Falmouth Wellness Discovery pull-out (January 2027). Food pins and Culinary Quest chrome added for Health & Wellness Maps."
+  "credits": "Food-themed illustrated base generated for Culinary Quest; restaurant pins and border tiles are Health & Wellness Maps overlays."
 }
