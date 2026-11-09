@@ -2,6 +2,13 @@
   'use strict';
   var sb = window.sb, side = document.getElementById('side'), nav = document.getElementById('nav');
   var S = { user: null, admin: false, cats: [], places: [], ratings: [], filter: { q: '', cat: '', free: false }, markers: {}, pickMarker: null, picking: false, tab: 'list' };
+  // Owner-curated featured places (always shown; not invented hours/phones).
+  var FEATURED = [
+    { id: 'featured-syren-harbour', name: 'Syren Harbour', category: 'nutrition', status: 'approved', is_free: false,
+      town: 'Woods Hole', address: 'Woods Hole village (address approximate)', lat: 41.5238, lng: -70.6698,
+      website: null, hours: null, phone: null,
+      description: 'Restaurant in Woods Hole, Falmouth. Website coming soon (syrenharbour.com is not live yet). Pin is approximate in Woods Hole village — street address not yet verified. Seafood / fine dining.' }
+  ];
 
   function h(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function safeUrl(u) { return /^https?:\/\//i.test(u || '') ? u : ''; }
@@ -46,7 +53,7 @@
     var c = await sb.from('wellness_categories').select('*').order('sort');
     var p = await sb.from('wellness_places').select('*').order('name');
     var r = await sb.from('wellness_reviews').select('place_id,rating');
-    S.cats = c.data || []; S.places = p.data || []; S.ratings = r.data || [];
+    S.cats = c.data || []; S.places = (p.data || []).concat(FEATURED); S.ratings = r.data || [];
     drawMarkers();
   }
   async function refreshUser() {

@@ -1,0 +1,512 @@
+{
+  "title": "Culinary Quest \u2014 Falmouth Food Map",
+  "tagline": "Eat. Explore. Earn stamps.",
+  "frame": [
+    0.10693,
+    0.11094,
+    0.89307,
+    0.88981
+  ],
+  "faces": {
+    "downtown": {
+      "title": "Downtown \u00b7 Main Street (front)",
+      "src": "assets/downtown-2400.jpg",
+      "webp": "assets/downtown-2400.webp",
+      "small": "assets/downtown-1200.webp",
+      "width": 2400,
+      "height": 1553
+    },
+    "woodshole": {
+      "title": "Main Street & Woods Hole (back)",
+      "src": "assets/woodshole-2400.jpg",
+      "webp": "assets/woodshole-2400.webp",
+      "small": "assets/woodshole-1200.webp",
+      "width": 2400,
+      "height": 1553
+    }
+  },
+  "categories": [
+    {
+      "id": "seafood",
+      "color": "#0284c7",
+      "name": "Seafood & Clam Shacks"
+    },
+    {
+      "id": "cafe",
+      "color": "#ca8a04",
+      "name": "Caf\u00e9s & Breakfast"
+    },
+    {
+      "id": "healthy",
+      "color": "#16a34a",
+      "name": "Healthy & Plant-Forward"
+    },
+    {
+      "id": "casual",
+      "color": "#dc2626",
+      "name": "Pizza & Casual"
+    },
+    {
+      "id": "fine",
+      "color": "#7c3aed",
+      "name": "Fine Dining"
+    },
+    {
+      "id": "bakery",
+      "color": "#db2777",
+      "name": "Bakeries & Sweets"
+    },
+    {
+      "id": "farm",
+      "color": "#65a30d",
+      "name": "Farms/Markets & Farm Stands"
+    },
+    {
+      "id": "brew",
+      "color": "#b45309",
+      "name": "Breweries/Wineries"
+    }
+  ],
+  "places": [
+    {
+      "id": "cape-island",
+      "n": 1,
+      "name": "Cape Island Caf\u00e9",
+      "cat": "healthy",
+      "area": "Homeport \u00b7 Gifford St",
+      "side": "downtown",
+      "x": 0.28,
+      "y": 0.22,
+      "web": "https://capeislandcafe.com/",
+      "quest": true,
+      "trail": false,
+      "note": "Quest Stop #1"
+    },
+    {
+      "id": "bean-cod",
+      "n": 2,
+      "name": "Bean & Cod",
+      "cat": "bakery",
+      "area": "Main Street",
+      "side": "downtown",
+      "x": 0.48,
+      "y": 0.34,
+      "web": "",
+      "trail": true,
+      "trailN": 1
+    },
+    {
+      "id": "pickle-jar",
+      "n": 3,
+      "name": "Pickle Jar Kitchen",
+      "cat": "cafe",
+      "area": "Main Street",
+      "side": "downtown",
+      "x": 0.5,
+      "y": 0.36,
+      "web": "",
+      "trail": true,
+      "trailN": 2
+    },
+    {
+      "id": "anejo",
+      "n": 4,
+      "name": "A\u00f1ejo Mexican Bistro",
+      "cat": "casual",
+      "area": "Main Street",
+      "side": "downtown",
+      "x": 0.52,
+      "y": 0.35,
+      "web": "https://www.anejo.cc/",
+      "trail": true,
+      "trailN": 3
+    },
+    {
+      "id": "maison",
+      "n": 5,
+      "name": "Maison Villatte",
+      "cat": "bakery",
+      "area": "Main Street",
+      "side": "downtown",
+      "x": 0.54,
+      "y": 0.33,
+      "web": "",
+      "trail": true,
+      "trailN": 4
+    },
+    {
+      "id": "liam",
+      "n": 6,
+      "name": "Liam Maguire's Irish Pub",
+      "cat": "casual",
+      "area": "Main Street",
+      "side": "downtown",
+      "x": 0.56,
+      "y": 0.34,
+      "web": "http://www.liammaguire.com/",
+      "trail": true,
+      "trailN": 5
+    },
+    {
+      "id": "quarterdeck",
+      "n": 7,
+      "name": "Quarterdeck Restaurant",
+      "cat": "casual",
+      "area": "Main Street",
+      "side": "downtown",
+      "x": 0.49,
+      "y": 0.38,
+      "web": ""
+    },
+    {
+      "id": "osteria",
+      "n": 8,
+      "name": "Osteria La Civetta",
+      "cat": "fine",
+      "area": "Main Street",
+      "side": "downtown",
+      "x": 0.47,
+      "y": 0.37,
+      "web": "https://www.osterialacivetta.com/"
+    },
+    {
+      "id": "cucina",
+      "n": 9,
+      "name": "La Cucina Sul Mare",
+      "cat": "fine",
+      "area": "Main Street",
+      "side": "downtown",
+      "x": 0.55,
+      "y": 0.36,
+      "web": "https://www.lacucinasulmare.com/"
+    },
+    {
+      "id": "glass-onion",
+      "n": 10,
+      "name": "The Glass Onion",
+      "cat": "fine",
+      "area": "North Main Street",
+      "side": "downtown",
+      "x": 0.42,
+      "y": 0.3,
+      "web": ""
+    },
+    {
+      "id": "bourbon-butter",
+      "n": 11,
+      "name": "Bourbon & Butter Sugar Shed",
+      "cat": "bakery",
+      "area": "Main Street",
+      "side": "downtown",
+      "x": 0.44,
+      "y": 0.32,
+      "web": ""
+    },
+    {
+      "id": "siena",
+      "n": 12,
+      "name": "Siena Italian Restaurant",
+      "cat": "fine",
+      "area": "Highfield / Main area",
+      "side": "downtown",
+      "x": 0.22,
+      "y": 0.2,
+      "web": ""
+    },
+    {
+      "id": "raw-bar",
+      "n": 13,
+      "name": "Falmouth Raw Bar",
+      "cat": "seafood",
+      "area": "Harbor \u00b7 Scranton Ave",
+      "side": "downtown",
+      "x": 0.62,
+      "y": 0.48,
+      "web": "http://www.falmouthrawbar.com/"
+    },
+    {
+      "id": "flying-bridge",
+      "n": 14,
+      "name": "The Flying Bridge",
+      "cat": "seafood",
+      "area": "Harbor \u00b7 Scranton Ave",
+      "side": "downtown",
+      "x": 0.66,
+      "y": 0.52,
+      "web": "https://www.flyingbridgerestaurant.com/"
+    },
+    {
+      "id": "windfall",
+      "n": 15,
+      "name": "Windfall Market",
+      "cat": "farm",
+      "area": "Harbor \u00b7 Scranton Ave",
+      "side": "downtown",
+      "x": 0.6,
+      "y": 0.46,
+      "web": "https://www.windfallmarket.com/"
+    },
+    {
+      "id": "black-dog",
+      "n": 16,
+      "name": "The Black Dog Heights Caf\u00e9",
+      "cat": "cafe",
+      "area": "Falmouth Heights",
+      "side": "downtown",
+      "x": 0.72,
+      "y": 0.58,
+      "web": "https://www.theblackdog.com/"
+    },
+    {
+      "id": "mary-ellen",
+      "n": 17,
+      "name": "Mary Ellen's Portuguese Bakery",
+      "cat": "bakery",
+      "area": "Main Street / Teaticket",
+      "side": "downtown",
+      "x": 0.7,
+      "y": 0.4,
+      "web": ""
+    },
+    {
+      "id": "seafood-sams",
+      "n": 18,
+      "name": "Seafood Sam's",
+      "cat": "seafood",
+      "area": "Teaticket \u00b7 Palmer Ave",
+      "side": "downtown",
+      "x": 0.38,
+      "y": 0.18,
+      "web": "https://www.seafoodsams.com/"
+    },
+    {
+      "id": "coffee-obsession",
+      "n": 19,
+      "name": "Coffee Obsession",
+      "cat": "cafe",
+      "area": "Palmer Ave",
+      "side": "downtown",
+      "x": 0.34,
+      "y": 0.19,
+      "web": "https://www.coffeeobsession.com/"
+    },
+    {
+      "id": "cape-cod-bagel",
+      "n": 20,
+      "name": "Cape Cod Bagel Co.",
+      "cat": "cafe",
+      "area": "Palmer Ave",
+      "side": "downtown",
+      "x": 0.36,
+      "y": 0.21,
+      "web": ""
+    },
+    {
+      "id": "crabapples",
+      "n": 21,
+      "name": "Crabapple's",
+      "cat": "cafe",
+      "area": "Palmer Ave",
+      "side": "downtown",
+      "x": 0.4,
+      "y": 0.2,
+      "web": ""
+    },
+    {
+      "id": "aquatic",
+      "n": 22,
+      "name": "Aquatic Brewing",
+      "cat": "brew",
+      "area": "Falmouth Village",
+      "side": "downtown",
+      "x": 0.58,
+      "y": 0.42,
+      "web": "https://www.aquaticbrewing.com/"
+    },
+    {
+      "id": "bad-martha",
+      "n": 23,
+      "name": "Bad Martha Farmer's Brewery",
+      "cat": "brew",
+      "area": "East Falmouth",
+      "side": "downtown",
+      "x": 0.86,
+      "y": 0.28,
+      "web": "https://www.badmarthabeer.com/falmouth-brewery/",
+      "approx": true
+    },
+    {
+      "id": "coonamessett",
+      "n": 24,
+      "name": "Coonamessett Farm",
+      "cat": "farm",
+      "area": "East Falmouth \u00b7 Hatchville",
+      "side": "downtown",
+      "x": 0.84,
+      "y": 0.16,
+      "web": "https://coonamessettfarm.com/",
+      "approx": true
+    },
+    {
+      "id": "landfall",
+      "n": 25,
+      "name": "Landfall Restaurant",
+      "cat": "seafood",
+      "area": "Woods Hole",
+      "side": "woodshole",
+      "x": 0.16,
+      "y": 0.64,
+      "web": "https://www.landfallwoodshole.com/"
+    },
+    {
+      "id": "fishmonger",
+      "n": 26,
+      "name": "Fishmonger Caf\u00e9",
+      "cat": "seafood",
+      "area": "Woods Hole",
+      "side": "woodshole",
+      "x": 0.15,
+      "y": 0.6,
+      "web": ""
+    },
+    {
+      "id": "pie-sky",
+      "n": 27,
+      "name": "Pie in the Sky",
+      "cat": "bakery",
+      "area": "Woods Hole",
+      "side": "woodshole",
+      "x": 0.18,
+      "y": 0.62,
+      "web": ""
+    },
+    {
+      "id": "syren-harbour",
+      "n": 28,
+      "name": "Syren Harbour",
+      "cat": "seafood",
+      "area": "Woods Hole (approx.)",
+      "side": "woodshole",
+      "x": 0.145,
+      "y": 0.635,
+      "web": "",
+      "websiteNote": "Website coming soon",
+      "approx": true,
+      "addressNote": "Address approximate \u2014 Woods Hole village; street address not yet verified"
+    }
+  ],
+  "events": [
+    {
+      "id": "ffm-thu",
+      "name": "Falmouth Farmers Market (Thursday)",
+      "when": "May\u2013October \u00b7 Thursdays",
+      "where": "Marine Park, Scranton Ave",
+      "side": "downtown",
+      "x": 0.63,
+      "y": 0.5
+    },
+    {
+      "id": "ffm-sun",
+      "name": "Falmouth Farmers Market (Sunday)",
+      "when": "August\u2013November \u00b7 Sundays",
+      "where": "Mullen-Hall School lot",
+      "side": "downtown",
+      "x": 0.5,
+      "y": 0.28
+    },
+    {
+      "id": "ffm-winter",
+      "name": "Falmouth Winter Farmers Market",
+      "when": "January\u2013March \u00b7 Sundays",
+      "where": "Mullen-Hall School",
+      "side": "downtown",
+      "x": 0.5,
+      "y": 0.3
+    },
+    {
+      "id": "food-truck-fest",
+      "name": "Cape Cod Food Truck & Craft Beverage Festival",
+      "when": "September",
+      "where": "Cape Cod Fairgrounds, East Falmouth",
+      "side": "downtown",
+      "x": 0.88,
+      "y": 0.22
+    },
+    {
+      "id": "taste-cape",
+      "name": "Taste of Cape Cod",
+      "when": "November",
+      "where": "Sea Crest Beach Resort, North Falmouth",
+      "side": "downtown",
+      "x": 0.2,
+      "y": 0.12
+    },
+    {
+      "id": "oyster-sushi",
+      "name": "Oyster & Sushi Festival",
+      "when": "November",
+      "where": "Flying Bridge Restaurant",
+      "side": "downtown",
+      "x": 0.66,
+      "y": 0.54
+    },
+    {
+      "id": "holidays-sea",
+      "name": "Holidays by the Sea \u00b7 Village Holiday Stroll",
+      "when": "Early December",
+      "where": "Main Street & Queen\u2019s Buy Way",
+      "side": "downtown",
+      "x": 0.53,
+      "y": 0.35
+    }
+  ],
+  "activities": [
+    {
+      "id": "act-farm",
+      "name": "Coonamessett Farm (visit & PYO)",
+      "when": "Seasonal",
+      "where": "East Falmouth",
+      "side": "downtown",
+      "x": 0.84,
+      "y": 0.18
+    },
+    {
+      "id": "act-market",
+      "name": "Shop the Falmouth Farmers Market",
+      "when": "Seasonal",
+      "where": "Marine Park / Mullen-Hall",
+      "side": "downtown",
+      "x": 0.63,
+      "y": 0.49
+    },
+    {
+      "id": "act-fish",
+      "name": "Patriot Party Boats (fishing charters)",
+      "when": "Seasonal trips",
+      "where": "Falmouth Harbor",
+      "side": "downtown",
+      "x": 0.68,
+      "y": 0.55
+    },
+    {
+      "id": "act-highfield",
+      "name": "Highfield Hall culinary programs",
+      "when": "Check calendar",
+      "where": "Highfield Drive",
+      "side": "downtown",
+      "x": 0.2,
+      "y": 0.18
+    },
+    {
+      "id": "act-windfall",
+      "name": "Windfall Market (specialty foods)",
+      "when": "Year-round",
+      "where": "Scranton Ave",
+      "side": "downtown",
+      "x": 0.6,
+      "y": 0.45
+    }
+  ],
+  "pdf": "assets/magazine-pullout-reference.pdf",
+  "credits": "Base illustrated map art reused from Falmouth Wellness Discovery pull-out (January 2027). Food pins and Culinary Quest chrome added for Health & Wellness Maps."
+}

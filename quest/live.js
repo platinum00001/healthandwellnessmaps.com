@@ -41,7 +41,8 @@
     { id: 'coonamessett', name: 'Coonamessett Farm', cat: 'farm', area: 'East Falmouth · Hatchville', lat: 41.616722, lng: -70.578890, web: 'https://coonamessettfarm.com/' },
     { id: 'windfall', name: 'Windfall Market', cat: 'farm', area: 'Harbor · Scranton Ave', lat: 41.551452, lng: -70.603742, web: 'https://www.windfallmarket.com/' },
     { id: 'bad-martha', name: "Bad Martha Farmer's Brewery", cat: 'brew', area: 'East Falmouth', lat: 41.579182, lng: -70.542494, web: 'https://www.badmarthabeer.com/falmouth-brewery/' },
-    { id: 'aquatic', name: 'Aquatic Brewing', cat: 'brew', area: 'Falmouth Village', lat: 41.552128, lng: -70.604851, web: 'https://www.aquaticbrewing.com/' }
+    { id: 'aquatic', name: 'Aquatic Brewing', cat: 'brew', area: 'Falmouth Village', lat: 41.552128, lng: -70.604851, web: 'https://www.aquaticbrewing.com/' },
+    { id: 'syren-harbour', name: 'Syren Harbour', cat: 'seafood', area: 'Woods Hole (approx.)', lat: 41.5238, lng: -70.6698, web: '', websiteNote: 'Website coming soon', approx: true }
   ];
 
   // Verified recurring / annual Falmouth & Upper Cape food-related events.
@@ -122,6 +123,8 @@
     if (p.quest) bits += ' <span style="color:#b45309;font-weight:800">· Quest Stop #1</span>';
     bits += '<br><span style="color:#78716c">' + h(c.name) + ' · ' + h(p.area) + '</span>';
     if (p.web) bits += '<br><a href="' + h(p.web) + '" target="_blank" rel="noopener">Website ↗</a>';
+    else if (p.websiteNote) bits += '<br><span style="color:#78716c">' + h(p.websiteNote) + '</span>';
+    if (p.approx) bits += '<br><span style="font-size:11px;color:#a8a29e">Pin approximate</span>';
     bits += '<br><span style="font-size:11px;color:#a8a29e">Preview listing — details being verified</span>';
     return bits;
   }
@@ -248,7 +251,7 @@
           (p.quest ? '<span class="badge">Quest #1</span>' : '') +
           (p.trail ? '<span class="badge" style="background:#78716c">Trail ' + p.trailN + '</span>' : '') +
           '</b><div class="meta"><i style="display:inline-block;width:8px;height:8px;border-radius:50%;background:' + h(c.color) + ';margin-right:4px"></i>' +
-          h(c.name) + ' · ' + h(p.area) + (p.web ? ' · <a href="' + h(p.web) + '" target="_blank" rel="noopener" onclick="event.stopPropagation()">site</a>' : '') +
+          h(c.name) + ' · ' + h(p.area) + (p.web ? ' · <a href="' + h(p.web) + '" target="_blank" rel="noopener" onclick="event.stopPropagation()">site</a>' : (p.websiteNote ? ' · ' + h(p.websiteNote) : '')) +
           '</div></div>';
       }).join('') : '<p class="muted small" style="margin-top:8px">No restaurants match.</p>') + '</div>' +
       '<div class="section-label">Festivals &amp; events</div>' +
