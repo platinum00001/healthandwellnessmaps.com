@@ -18,9 +18,11 @@
   }
   function asset(path) {
     path = String(path || '');
-    if (path.indexOf('/quest/') === 0) return path;
-    if (path.indexOf('assets/') === 0) return '/quest/' + path;
-    return '/quest/assets/' + path.replace(/^.*\//, '');
+    var q = '', qi = path.indexOf('?');
+    if (qi >= 0) { q = path.slice(qi); path = path.slice(0, qi); }
+    if (path.indexOf('/quest/') === 0) return path + q;
+    if (path.indexOf('assets/') === 0) return '/quest/' + path + q;
+    return '/quest/assets/' + path.replace(/^.*\//, '') + q;
   }
 
   function setFace(f) {
