@@ -10,17 +10,17 @@
   "faces": {
     "downtown": {
       "title": "Downtown \u00b7 Main Street Food Map (front)",
-      "src": "assets/downtown-2400.jpg",
-      "webp": "assets/downtown-2400.webp",
-      "small": "assets/downtown-1200.webp",
+      "src": "assets/downtown-2400.jpg?v=b044fd5",
+      "webp": "assets/downtown-2400.webp?v=b044fd5",
+      "small": "assets/downtown-1200.webp?v=b044fd5",
       "width": 2400,
       "height": 1553
     },
     "woodshole": {
       "title": "Woods Hole & Waterfront Food Map (back)",
-      "src": "assets/woodshole-2400.jpg",
-      "webp": "assets/woodshole-2400.webp",
-      "small": "assets/woodshole-1200.webp",
+      "src": "assets/woodshole-2400.jpg?v=b044fd5",
+      "webp": "assets/woodshole-2400.webp?v=b044fd5",
+      "small": "assets/woodshole-1200.webp?v=b044fd5",
       "width": 2400,
       "height": 1553
     }
