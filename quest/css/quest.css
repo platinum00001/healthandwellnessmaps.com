@@ -23,8 +23,9 @@ header.top{background:var(--navy);color:#fff;padding:10px 16px;display:flex;alig
 .top button.on,.pull-btn[aria-pressed="true"]{background:var(--coral);border-color:var(--coral);color:var(--navy)}
 .pull-btn.is-sun{background:var(--coral);border-color:var(--coral);color:var(--navy)}
 .banner{background:#9a3412;color:#fff;text-align:center;padding:7px 12px;font-size:.82rem;font-weight:600}
-.layout{flex:1;display:grid;grid-template-columns:minmax(300px,380px) 1fr;min-height:0;min-height:calc(100vh - 110px)}
-.side{overflow:auto;background:#fffaf3;border-right:1px solid var(--line);padding:14px 14px 28px;-webkit-overflow-scrolling:touch;min-height:0;z-index:5;box-shadow:4px 0 18px rgba(0,0,0,.06)}
+.layout{flex:1;display:grid;grid-template-columns:minmax(300px,380px) 1fr;min-height:0;min-height:calc(100vh - 110px);position:relative}
+.side{overflow:auto;background:#fffaf3;border-right:1px solid var(--line);padding:14px 14px 28px;-webkit-overflow-scrolling:touch;min-height:0;min-width:300px;z-index:5;box-shadow:4px 0 18px rgba(0,0,0,.06);color:var(--ink)}
+.side #panel{min-height:200px;display:block;visibility:visible;opacity:1}
 .stage{min-height:0;display:flex;flex-direction:column;background:#d9d0bc;position:relative}
 .tools{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:10px 12px;background:rgba(29,42,77,.94);color:#fff}
 .tools .grow{flex:1;min-width:8rem;font:600 .78rem "Barlow Condensed",sans-serif;letter-spacing:.08em;text-transform:uppercase;opacity:.9}
