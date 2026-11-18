@@ -1,0 +1,619 @@
+{
+ "version": 1,
+ "videoBase": "media/faq/",
+ "fallback": "I’m not sure about that one yet. Please call us at 508-801-5444 or email Syren@SyrenHarbour.com and we’ll be glad to help.",
+ "chips": [
+  "What food do you serve?",
+  "What is jerk?",
+  "How spicy is it?",
+  "Vegetarian or gluten-free?",
+  "Reservations & catering",
+  "Where are you?",
+  "Merch"
+ ],
+ "entries": [
+  {
+   "id": "welcome",
+   "title": "Welcome",
+   "keywords": [
+    "hello",
+    "hi",
+    "hey",
+    "welcome",
+    "good evening",
+    "good morning"
+   ],
+   "answer": "Welcome to Syren Harbour! Ask me about our menu, Caribbean flavors, or the restaurant.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "item-soup",
+   "title": "Soup",
+   "keywords": [
+    "soup",
+    "soup"
+   ],
+   "answer": "Yes, Soup is one of our starters ($10). Options: Chicken Pumpkin (no spice), Shrimp Butternut Bisque (light spice).",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "item-flat-bread",
+   "title": "Flat Bread (7”)",
+   "keywords": [
+    "flat",
+    "bread",
+    "flat bread (7”)"
+   ],
+   "answer": "Yes, Flat Bread (7”) is one of our starters ($14). Options: Jerk Chicken Arugula, with Scotch Bonnet Honey.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "item-personal-pizza",
+   "title": "Personal Pizza (7”)",
+   "keywords": [
+    "personal",
+    "pizza",
+    "personal pizza (7”)"
+   ],
+   "answer": "Yes, Personal Pizza (7”) is one of our starters. Options: Cheese $10, Pepperoni $12, Shrimp $16.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "item-popcorn-shrimp",
+   "title": "Popcorn Shrimp",
+   "keywords": [
+    "popcorn",
+    "shrimp",
+    "popcorn shrimp"
+   ],
+   "answer": "Yes, Popcorn Shrimp is one of our starters ($14). Options: Tartar, Garlic Aioli.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "item-vermont-brussels",
+   "title": "Vermont Brussels",
+   "keywords": [
+    "vermont",
+    "brussels",
+    "vermont brussels"
+   ],
+   "answer": "Yes, Vermont Brussels is one of our starters ($10). Brussels sprouts glazed with Vermont Maple Mustard Vinaigrette.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "item-crispy-wings",
+   "title": "Crispy Wings",
+   "keywords": [
+    "crispy",
+    "wings",
+    "crispy wings"
+   ],
+   "answer": "Yes, Crispy Wings is one of our starters (6/$16). Options: Sweet (Tamarind), Savory (Mojo Criollo), Savory (Syren Dry Rub), Sweet & Spicy (Scotch Bonnet Honey), Sweet & Spicy (Jerk Apricot).",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "item-empanadas",
+   "title": "Empanadas",
+   "keywords": [
+    "empanadas",
+    "empanadas"
+   ],
+   "answer": "Yes, Empanadas is one of our starters (2/$10). Options: Beef, Chicken (has a light spice).",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "item-caribbean-caesar",
+   "title": "Caribbean Caesar",
+   "keywords": [
+    "caribbean",
+    "caesar",
+    "caribbean caesar"
+   ],
+   "answer": "Yes, Caribbean Caesar is one of our starters ($10). w/ adobo limón dressing (no cilantro). Options: Add grilled chicken +$5, Add grilled shrimp +$7.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "item-haka-style-jerk-chicken",
+   "title": "Haka style Jerk Chicken",
+   "keywords": [
+    "haka",
+    "jerk",
+    "chicken",
+    "haka style jerk chicken"
+   ],
+   "answer": "Haka style Jerk Chicken is one of our mains ($22). Herb and spice steeped chicken leg quarter. Cooled, battered then fried with rice and peas, steamed cabbage and sweet plantain. Served with Tamarind sauce.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "item-mojo-criollo-shrimp",
+   "title": "Mojo Criollo Shrimp",
+   "keywords": [
+    "mojo",
+    "criollo",
+    "shrimp",
+    "mojo criollo shrimp"
+   ],
+   "answer": "Mojo Criollo Shrimp is one of our mains ($26). Jumbo Shrimp sautéed in a savory citrus orange, lime and garlic sauce served with a Corn and Carrot Yellow Rice Risotto.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "item-shrimp-milanesa",
+   "title": "Shrimp Milanesa",
+   "keywords": [
+    "shrimp",
+    "milanesa",
+    "shrimp milanesa"
+   ],
+   "answer": "Shrimp Milanesa is one of our mains ($30). Chopped and Formed Shrimp Cutlet, Fried Crisp. Topped with a fresh arugula salad.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "item-porchetta-pernil",
+   "title": "Porchetta Pernil",
+   "keywords": [
+    "porchetta",
+    "pernil",
+    "porchetta pernil"
+   ],
+   "answer": "Porchetta Pernil is one of our mains ($34). Porchetta seasoned Dominican Pernil style served with garlic green beans, Yucca Mofongo (mashed cassava) and sweet plantain.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "jerk",
+   "title": "What is jerk?",
+   "keywords": [
+    "jerk",
+    "jamaican",
+    "allspice",
+    "pimento",
+    "smoky",
+    "how spicy",
+    "spicy",
+    "spice",
+    "heat",
+    "hot"
+   ],
+   "answer": "Jerk is Jamaica’s famous way of seasoning and cooking: meat is marinated in a paste of allspice (pimento), Scotch bonnet pepper, scallion, thyme and garlic, then traditionally cooked low and smoky over pimento wood. On our menu you’ll find the Haka style Jerk Chicken, the Jerk Chicken Arugula Flat Bread and Jerk Apricot wings. Heat varies by dish; several items are marked on the menu, like the Chicken Pumpkin soup (no spice) and the Shrimp Butternut Bisque (light spice). Not sure? Give us a call at 508-801-5444.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "scotch-bonnet",
+   "title": "Scotch bonnet",
+   "keywords": [
+    "scotch",
+    "bonnet",
+    "pepper",
+    "peppers",
+    "habanero",
+    "scoville"
+   ],
+   "answer": "The Scotch bonnet is the signature Caribbean pepper: very hot (in the same range as a habanero) with a fruity, almost sweet flavor. We use it in our Scotch Bonnet Honey, which tops the Jerk Chicken Arugula Flat Bread and is one of our Crispy Wings flavors (Sweet & Spicy).",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "plantains",
+   "title": "Plantains & tostones",
+   "keywords": [
+    "plantain",
+    "plantains",
+    "maduros",
+    "tostones",
+    "platanos",
+    "platano"
+   ],
+   "answer": "Plantains are a Caribbean staple. Ripe ones are fried sweet and caramelized (maduros); green ones are smashed and twice-fried into crunchy tostones. Sweet plantain comes with our Haka style Jerk Chicken and our Porchetta Pernil. Tostones aren’t on our current menu.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "mofongo",
+   "title": "Mofongo",
+   "keywords": [
+    "mofongo",
+    "yuca",
+    "yucca",
+    "cassava"
+   ],
+   "answer": "Mofongo is a beloved Caribbean mash, classically fried green plantain pounded with garlic and pork cracklings. Ours is a Yucca Mofongo (mashed cassava) served with the Porchetta Pernil.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "mangu",
+   "title": "Mangú",
+   "keywords": [
+    "mangu",
+    "tres golpes",
+    "breakfast",
+    "dominican breakfast"
+   ],
+   "answer": "Mangú is the Dominican Republic’s comfort food: boiled green plantains mashed smooth with butter and topped with pickled red onions, often served as “los tres golpes” with fried salami, fried cheese and eggs. It isn’t on our current menu.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "sofrito",
+   "title": "Sofrito & sazón",
+   "keywords": [
+    "sofrito",
+    "sazon",
+    "seasoning",
+    "adobo",
+    "sason",
+    "annatto",
+    "achiote"
+   ],
+   "answer": "Sofrito is the aromatic base of so much Caribbean cooking, a blend of peppers, onion, garlic and herbs. Sazón is a seasoning mix, often with annatto (achiote), cumin, coriander, garlic and oregano, and adobo is an all-purpose garlic-and-spice seasoning. You’ll taste that family of flavors in dishes like our Caribbean Caesar with adobo limón dressing.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "rice-and-peas",
+   "title": "Rice and peas",
+   "keywords": [
+    "rice",
+    "peas",
+    "beans",
+    "coconut",
+    "kidney"
+   ],
+   "answer": "Jamaican rice and peas is rice simmered with red kidney beans (the “peas”), coconut milk, thyme, scallion and allspice. It comes with our Haka style Jerk Chicken, along with steamed cabbage and sweet plantain. The Mojo Criollo Shrimp comes with a Corn and Carrot Yellow Rice Risotto.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "mojo",
+   "title": "Mojo criollo",
+   "keywords": [
+    "mojo",
+    "criollo",
+    "citrus",
+    "garlic sauce",
+    "sour orange"
+   ],
+   "answer": "Mojo criollo is a bright Caribbean marinade of citrus, garlic and herbs. Our Mojo Criollo Shrimp is jumbo shrimp sautéed in a savory citrus orange, lime and garlic sauce, served with a Corn and Carrot Yellow Rice Risotto. Mojo Criollo is also one of our Crispy Wings flavors.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "pernil",
+   "title": "Pernil",
+   "keywords": [
+    "pernil",
+    "pork",
+    "porchetta",
+    "roast pork"
+   ],
+   "answer": "Pernil is slow-roasted, garlicky pork shoulder, a centerpiece of Dominican and Puerto Rican celebrations. Our Porchetta Pernil is porchetta seasoned Dominican Pernil style, served with garlic green beans, Yucca Mofongo and sweet plantain.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "ackee",
+   "title": "Ackee and saltfish",
+   "keywords": [
+    "ackee",
+    "saltfish",
+    "codfish",
+    "national dish"
+   ],
+   "answer": "Ackee and saltfish is Jamaica’s national dish: the buttery ackee fruit sautéed with salted cod, onion, tomato and peppers. It isn’t on our current menu, but it’s a classic worth knowing.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "oxtail",
+   "title": "Oxtail",
+   "keywords": [
+    "oxtail",
+    "oxtails",
+    "butter beans",
+    "stew beef"
+   ],
+   "answer": "Jamaican oxtail is slow-braised until fall-off-the-bone tender with allspice, thyme, browning and butter beans. It isn’t on our current menu.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "curry-goat",
+   "title": "Curry goat",
+   "keywords": [
+    "curry",
+    "goat",
+    "curried"
+   ],
+   "answer": "Curry goat is a Jamaican celebration dish: goat stewed with Caribbean curry powder, thyme, scallion and Scotch bonnet, usually with rice. It isn’t on our current menu.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "festival",
+   "title": "Festival",
+   "keywords": [
+    "festival",
+    "dumpling",
+    "dumplings",
+    "fried dough"
+   ],
+   "answer": "Festival is a slightly sweet Jamaican fried dumpling made with cornmeal and flour, a classic partner for fried fish or jerk. It isn’t on our current menu.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "sancocho",
+   "title": "Sancocho",
+   "keywords": [
+    "sancocho",
+    "stew",
+    "soup dominican"
+   ],
+   "answer": "Sancocho is the Dominican Republic’s hearty celebration stew of several meats with yuca, plantain, corn and other root vegetables. It isn’t on our current menu, but we do have two soups: Chicken Pumpkin (no spice) and Shrimp Butternut Bisque (light spice).",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "chimi",
+   "title": "Chimichurri burger",
+   "keywords": [
+    "chimi",
+    "chimichurri",
+    "burger",
+    "hamburger"
+   ],
+   "answer": "A Dominican “chimi” (chimichurri burger) is a street-food favorite: a seasoned patty on soft bread with shredded cabbage, onion, tomato and a creamy sauce. It isn’t on our current menu.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "morir",
+   "title": "Morir soñando",
+   "keywords": [
+    "morir",
+    "sonando",
+    "orange milk",
+    "dominican drink"
+   ],
+   "answer": "Morir soñando (“to die dreaming”) is a classic Dominican refresher of orange juice and milk with sugar and lots of ice. It isn’t on our posted menu.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "tamarind",
+   "title": "Tamarind",
+   "keywords": [
+    "tamarind",
+    "tamarindo"
+   ],
+   "answer": "Tamarind is a tangy-sweet tropical pod used across the Caribbean. Our Haka style Jerk Chicken is served with Tamarind sauce, and Sweet (Tamarind) is one of our Crispy Wings flavors.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "location",
+   "title": "Where we are",
+   "keywords": [
+    "where",
+    "location",
+    "address",
+    "directions",
+    "find",
+    "ferry",
+    "steamship",
+    "parking",
+    "park",
+    "water street",
+    "map",
+    "get there"
+   ],
+   "answer": "We’re at 71 Water St, Woods Hole, MA 02543, right on Eel Pond, a short walk from the Steamship Authority ferry terminal. Parking in the village is limited (metered street spots fill up fast in summer), so walking, biking the Shining Sea Bikeway or allowing extra time is a good idea.",
+   "video": "",
+   "captions": "",
+   "link": {
+    "href": "https://www.google.com/maps/dir/?api=1&destination=71+Water+St,+Woods+Hole,+MA+02543",
+    "label": "Get directions"
+   }
+  },
+  {
+   "id": "reservations",
+   "title": "Reservations & catering",
+   "keywords": [
+    "reservation",
+    "reservations",
+    "reserve",
+    "book",
+    "table",
+    "party",
+    "catering",
+    "cater",
+    "event",
+    "private",
+    "group",
+    "gathering"
+   ],
+   "answer": "We’d love to host you! For reservations, gatherings and catering, call us at 508-801-5444 or email Syren@SyrenHarbour.com and we’ll take care of you.",
+   "video": "",
+   "captions": "",
+   "link": {
+    "href": "mailto:Syren@SyrenHarbour.com?subject=Reservation%20or%20catering%20inquiry",
+    "label": "Email us"
+   }
+  },
+  {
+   "id": "open",
+   "title": "Opening",
+   "keywords": [
+    "open",
+    "opening",
+    "hours",
+    "when",
+    "time",
+    "times",
+    "closed",
+    "today",
+    "tonight"
+   ],
+   "answer": "We’re opening soon! Opening details will be announced shortly. In the meantime, call 508-801-5444 or email Syren@SyrenHarbour.com with any questions.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "dietary",
+   "title": "Dietary & allergies",
+   "keywords": [
+    "vegetarian",
+    "vegan",
+    "gluten",
+    "celiac",
+    "allergy",
+    "allergies",
+    "allergic",
+    "nut",
+    "nuts",
+    "dairy",
+    "shellfish",
+    "diet",
+    "dietary",
+    "meat free",
+    "meatless",
+    "halal"
+   ],
+   "answer": "On our menu, the Cheese Personal Pizza and the Vermont Brussels have no meat listed, and the Caribbean Caesar can be ordered without the chicken or shrimp add-ons. For gluten-free needs and any allergies, please call us at 508-801-5444 before you visit so we can talk through ingredients with you.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "pizza",
+   "title": "Pizza & flat bread",
+   "keywords": [
+    "pizza",
+    "pizzas",
+    "flatbread",
+    "flat bread",
+    "oven",
+    "pepperoni",
+    "cheese pizza"
+   ],
+   "answer": "Our Personal Pizza (7”) comes as Cheese $10, Pepperoni $12 or Shrimp $16, and our Flat Bread (7”, $14) is Jerk Chicken Arugula with Scotch Bonnet Honey.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "merch",
+   "title": "Merch",
+   "keywords": [
+    "merch",
+    "shirt",
+    "shirts",
+    "tshirt",
+    "hat",
+    "hats",
+    "hoodie",
+    "apparel",
+    "store",
+    "shop",
+    "gift"
+   ],
+   "answer": "We have Syren Harbour tees, hats and hoodies coming soon. Take a look at the merch page and let us know what you’d like!",
+   "video": "",
+   "captions": "",
+   "link": {
+    "href": "merch.html",
+    "label": "Visit the merch page"
+   }
+  },
+  {
+   "id": "contact",
+   "title": "Contact",
+   "keywords": [
+    "contact",
+    "phone",
+    "call",
+    "email",
+    "number",
+    "reach",
+    "talk"
+   ],
+   "answer": "You can reach us at 508-801-5444 or Syren@SyrenHarbour.com. We’re at 71 Water St, Woods Hole, MA 02543.",
+   "video": "",
+   "captions": "",
+   "link": {
+    "href": "tel:+15088015444",
+    "label": "Call 508-801-5444"
+   }
+  },
+  {
+   "id": "thanks",
+   "title": "Thanks",
+   "keywords": [
+    "thanks",
+    "thank",
+    "thx",
+    "appreciate",
+    "bye",
+    "goodbye"
+   ],
+   "answer": "You’re so welcome! We can’t wait to see you on the water.",
+   "video": "",
+   "captions": ""
+  },
+  {
+   "id": "menu",
+   "title": "Our menu",
+   "keywords": [
+    "menu",
+    "food",
+    "serve",
+    "eat",
+    "dishes",
+    "dinner",
+    "starters",
+    "mains",
+    "offer",
+    "cuisine",
+    "what do you have",
+    "price",
+    "prices",
+    "cost"
+   ],
+   "answer": "We serve island-inspired Caribbean and Latin plates. Starters: Soup, Flat Bread (7”), Personal Pizza (7”), Popcorn Shrimp, Vermont Brussels, Crispy Wings, Empanadas, Caribbean Caesar. Mains: Haka style Jerk Chicken, Mojo Criollo Shrimp, Shrimp Milanesa, Porchetta Pernil. Starters run about $10 to $16 and mains $22 to $34. Scroll up to the Menu section for every detail.",
+   "video": "",
+   "captions": "",
+   "link": {
+    "href": "#menu",
+    "label": "See the full menu"
+   }
+  },
+  {
+   "id": "caribbean",
+   "title": "Caribbean flavors",
+   "keywords": [
+    "caribbean",
+    "dominican",
+    "jamaica",
+    "island",
+    "latin",
+    "puerto",
+    "flavors",
+    "cuisine"
+   ],
+   "answer": "Our kitchen draws on Caribbean and Latin flavors: Jamaican jerk and Scotch bonnet heat, Dominican pernil, mofongo and sweet plantain, citrusy mojo criollo, tamarind and adobo. Ask me about any of them!",
+   "video": "",
+   "captions": ""
+  }
+ ]
+}
